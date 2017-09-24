@@ -38,7 +38,7 @@ def main():
 
     recipe = {
         u'name': u"10 Pound Stout (Extract)",
-        u'start_volume': 4.0,
+        u'start_volume': 6.0,
         u'final_volume': 5.0,
         u'grains': [
             {u'name': u'Amber Liquid Extract',
@@ -61,15 +61,17 @@ def main():
             {u'name': u'Columbus',
              u'weight': 2.0,
              u'boil_time': 60.0,
-             u'hop_type': u'pellet'},
+             u'hop_type': u'pellet',
+             u'percent_alpha_acids': 0.149,  # from bag
+             },
             {u'name': u'Cascade US',
              u'weight': 7.0,
              u'boil_time': 15.0,
-             u'hop_type': u'whole wet'},
+             u'hop_type': u'whole wet'},  # from garden
             {u'name': u'Cascade US',
              u'weight': 7.0,
              u'boil_time': 5.0,
-             u'hop_type': u'whole wet'},
+             u'hop_type': u'whole wet'},  # from garden
         ],
         u'yeast': {
             u'name': u'Wyeast 1084',
@@ -121,7 +123,7 @@ def main():
     # - bag: 1/2oz or 13g
     # - total: 2lbs 9oz + 200g or 1.365 kg = 3.0093099 lbs
 
-    # 1.073  # post adding DME + LME
+    # 1.075 @ 205degF (cools down on contact) # post adding DME + LME
 
 
 if __name__ == "__main__":

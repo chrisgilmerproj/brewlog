@@ -27,6 +27,7 @@ Pre-Boil Gravity:
 
 import os
 
+from brew.constants import GRAIN_TYPE_SPECIALTY
 from brew.parsers import JSONDataLoader
 from brew.parsers import parse_recipe
 from brew.styles import StyleFactory
@@ -41,10 +42,10 @@ def main():
         u'final_volume': 5.0,
         u'grains': [
             {u'name': u'Amber Liquid Extract',
-             u'weight': 7.0,
+             u'weight': 6.0 + 15.75 / 16.0,
              u'grain_type': u'lme'},
             {u'name': u'Dark Dry Extract',
-             u'weight': 3.0,
+             u'weight': 3.001,
              u'grain_type': u'dme'},
             {u'name': u'Caramel Crystal Malt 120l',
              u'weight': 1.0,
@@ -74,7 +75,7 @@ def main():
             u'name': u'Wyeast 1084',
         },
         u'data': {
-            u'brew_house_yield': 0.65,
+            u'brew_house_yield': 0.79,
             u'units': u'imperial',
         },
     }
@@ -93,6 +94,34 @@ def main():
     errors = style.recipe_errors(beer)
     for err in errors:
         print('- {}'.format(err))
+
+    # Specialty Grains, Multi Step Mash
+    grain_additions = beer.get_grain_additions_by_type(GRAIN_TYPE_SPECIALTY)
+    bhy = calculate_brew_house_yield(6.12 / 4.0,
+                                     1.030,
+                                     grain_additions)
+    print("\nBrew House Yield: {:0.2%} (Multi Step Mash)".format(bhy))  # noqa
+
+    # After diluting
+    grain_additions = beer.get_grain_additions_by_type(GRAIN_TYPE_SPECIALTY)
+    bhy = calculate_brew_house_yield(6.12 / 4.0 + 3.5,  # Added into water
+                                     1.009,
+                                     grain_additions)
+    print("\nBrew House Yield: {:0.2%} (Dilution)".format(bhy))  # noqa
+
+    # Extract weights
+    # LME
+    # - In tub: 7lbs 1 7/8 oz
+    # - tub: 3 1/8oz or 87g
+    # - total: 6lbs 15 6/8oz
+    #
+    # DME
+    # - In bag: 2lbs 9 1/2 oz (200g went to starter),
+    #           also 1.178 kg or 1.378 kg = 3.03797 lbs
+    # - bag: 1/2oz or 13g
+    # - total: 2lbs 9oz + 200g or 1.365 kg = 3.0093099 lbs
+
+    # 1.073  # post adding DME + LME
 
 
 if __name__ == "__main__":

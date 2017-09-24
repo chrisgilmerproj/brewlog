@@ -45,6 +45,9 @@ def main():
     print("Your temperature should then reach {} degF".format(target_temp))
     print("Keep your temperature here for 40 minutes")
 
+    # Settles at 125deg F, which was an issue since I was using 212 instead of
+    # 205 for the temp.  I had to add heat slowly to get it fixed to 140.
+
     initial_temp = target_temp
     target_temp = 158
     infusion_temp = 205  # boils at 3K ft

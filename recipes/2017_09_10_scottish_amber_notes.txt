@@ -1,0 +1,54 @@
+
+ 4qt (1.0gal) mash water (start at 167degF, mashing dropped to 162degF)
+ 2qt (0.5gal) sparge water
+14qt (3.5gal) boil water
+
+Total 5.0 gal
+
+3lbs 1-7/8oz of grain (includes dry bag weight)
+expected 3 lbs of grain:
+- 1.0lb Crystal 80L
+- 1.0lb Rausch
+- 1.0lb Victory
+
+7lbs 1-3/8 of extract (includes container of 3-1/4oz)
+expected 7lbs of extract:
+- 7.0lbs LME
+
+Hop Pellets
+Perle Hops, 7.1%AA 1032-PER-3
+1oz 60 min
+1oz 30 min
+
+Wyeast 1728 Scottish Ale
+2.0L Starter started at 9PM night before
+- 1.8L water
+- 200g Light DME
+
+FIX:
+20.5oz DME to bring gravity from 1.065 to 1.076
+- 9.75 Amber DME (All I had)
+- 10.75 Dark DME (Filled in)
+
+Timeline:
+ 7:30AM - Start Brewing
+ 7:45AM - Start Mashing (added grains to water)
+ 8:15AM - Measured mash at 1.048 (155deg)
+ 8:25AM - Pulled grains from mash water and sparged
+ 9:00AM - Add extract and try to boil
+ 9:45AM - Measured Boil Gravity at 1.065 (short of 1.076 expected)
+10:00AM - Add 20.5 DME (9.75 Amber + 10.75 Dark)
+10:10AM - Add 60min hops
+10:40AM - Add 30min hops
+11:10AM - Remove from heat and prepare to ferment
+11:30AM - Finished putting wort in fermenter.  Got 1.087 and about 
+
+Have: 3.75gal @ 1.087 
+Want: 1.076 means I need 4.3gal
+Add:  0.5gal
+
+New measurement at 1.067 (so this equation is weird)
+
+
+
+

@@ -118,6 +118,13 @@ def main():
                                      beer.grain_additions)
     print("\nBrew House Yield: {:0.2%} (Boil)".format(bhy))  # noqa
 
+    # Measured OG
+    # at 1.070
+
+    # Measured FG
+    # - with refractometer at 1.043
+    # - with hydrometer at 1.020R
+
 
 if __name__ == "__main__":
     main()

@@ -15,6 +15,7 @@ Get started with:
 $ python3 -m venv .venv
 $ source .venv/bin/activate
 (.venv) $ pip install -r requirements.txt
+(.venv) $ ln -s ../brewdata/brewdata/ data
 (.venv) $ python recipes/10_pound_stout_personal.py
 ```
 

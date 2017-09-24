@@ -1,0 +1,15 @@
+*.py[o|c]
+*.swp
+.venv/
+.coverage
+nosetests.xml
+
+*.egg-info/
+build/
+dist/
+
+.tox/
+python-mingus/
+
+data
+*_personal.py

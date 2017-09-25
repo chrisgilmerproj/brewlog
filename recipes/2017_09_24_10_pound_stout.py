@@ -91,7 +91,8 @@ def main():
     print(beer.format(short=True))
 
     factory = StyleFactory(os.path.join(data_dir, 'bjcp', 'styles.json'))
-    style = factory.create_style(20, 'C')
+    # style = factory.create_style(15, 'C')  # Irish Stout
+    style = factory.create_style(20, 'C')  # Imperial Stout
     print("")
     print(style.format())
 
@@ -128,7 +129,11 @@ def main():
 
     # 1.075 @ 205degF (cools down on contact) # post adding DME + LME
     # 1.080 @ 205degF (cools down on contact) # 37min into boil
-    #
+
+    # 1.079 @ end of brew at 70deg on refractometer
+    # 1.080 @ end of brew at 70deg on hydrometer
+
+    # added 2L starter (200g/2L) and got 1.067 at 5Gallons
 
 
 if __name__ == "__main__":

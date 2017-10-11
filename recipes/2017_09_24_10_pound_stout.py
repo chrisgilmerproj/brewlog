@@ -135,6 +135,19 @@ def main():
 
     # added 2L starter (200g/2L) and got 1.067 at 5Gallons
 
+"""
+
+
+----
+Keg on 10/10/2017
+
+Final Gravity
+1.030 hydrometer
+1.048 refractometer
+
+Probably 4.86% abv
+"""
+
 
 if __name__ == "__main__":
     main()

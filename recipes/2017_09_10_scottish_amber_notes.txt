@@ -48,7 +48,3 @@ Want: 1.076 means I need 4.3gal
 Add:  0.5gal
 
 New measurement at 1.067 (so this equation is weird)
-
-
-
-

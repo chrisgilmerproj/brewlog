@@ -51,6 +51,7 @@ def main():
     initial_temp = target_temp
     target_temp = 158
     infusion_temp = 205  # boils at 3K ft
+    # water volume is usually the addition of the infusion volume
     # It recommended 1.3qt, which I rounded up to 5.25 cups
     water_volume += 5.25 / 4.0  # += infusion_volume
 

@@ -16,6 +16,13 @@ def main():
     grain_weight = 12.2 + 0.38  # lbs
     water_volume = grain_weight * liquor_to_grist_ratio  # qt
 
+    # Rule of thumb is 1/2 quart per lbs grain (or as high as 0.8 quarts)
+    # https://www.brewersfriend.com/2010/06/12/water-volume-management-in-all-grain-brewing/
+    water_loss = 0.5 * grain_weight
+
+    # Do not exceed this number of qts after water loss
+    max_water_volume = 7.0 * 4 + water_loss
+
     print("")
     print("Starting with {:0.2f} lbs of grain".format(grain_weight))
 
@@ -38,33 +45,52 @@ def main():
                                     grain_weight, water_volume,
                                     infusion_temp=infusion_temp)
 
+    manual_heat = False
+    if water_volume + infusion_volume > max_water_volume:
+        infusion_volume = max_water_volume - water_volume
+        water_volume = max_water_volume
+        manual_heat = True
+    else:
+        water_volume += infusion_volume
+
     print("")
     print("Add {:0.2f} qts of {} degF water".format(round(infusion_volume, 2), infusion_temp))  # noqa
-    print("Your temperature should then reach {} degF".format(target_temp))
+    if manual_heat:
+        print("Your temperature will only reach {} degF if you add heat manually".format(target_temp))
+    else:
+        print("Your temperature should then reach {} degF".format(target_temp))
+
     print("Keep your temperature here for 40 minutes")
 
     initial_temp = 140  # Should be previous target_temp, modify from real data
     target_temp = 158
     infusion_temp = 205  # boils at 3K ft
-    water_volume += infusion_volume
 
     infusion_volume = mash_infusion(target_temp, initial_temp,
                                     grain_weight, water_volume,
                                     infusion_temp=infusion_temp)
 
+    manual_heat = False
+    if water_volume + infusion_volume > max_water_volume:
+        infusion_volume = max_water_volume - water_volume
+        water_volume = max_water_volume
+        manual_heat = True
+    else:
+        water_volume += infusion_volume
+
     print("")
     print("Add {:0.2f} qts of {} degF water".format(round(infusion_volume, 2), infusion_temp))  # noqa
-    print("Your temperature should then reach {} degF".format(target_temp))
-    print("Keep your temperature here for 20 minutes")
-    print("")
+    if manual_heat:
+        print("Your temperature will only reach {} degF if you add heat manually".format(target_temp))
+    else:
+        print("Your temperature should then reach {} degF".format(target_temp))
 
-    water_volume += infusion_volume
+    print("Keep your temperature here for 20 minutes")
+
+    print("")
     print("You should now have {:0.2f} qts of water in the mash".format(round(water_volume, 2)))
     print("Now remove the grains and continue with brewing")
 
-    # Rule of thumb is 1/2 quart per lbs grain (or as high as 0.8 quarts)
-    # https://www.brewersfriend.com/2010/06/12/water-volume-management-in-all-grain-brewing/
-    water_loss = 0.5 * grain_weight
     final_water_volume = water_volume - water_loss
     print("")
     print("Water lost to grain will be approximately {:0.2f} quarts".format(water_loss))

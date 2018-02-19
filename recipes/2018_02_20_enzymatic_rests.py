@@ -12,13 +12,15 @@ def main():
     print("")
     print("This is a 20/40/20 min schedule for temps 110/140/158 F respectively")
 
-    liquor_to_grist_ratio = 1.5  # qt:lbs
-    grain_weight = 12.2 + 0.38  # lbs
+    liquor_to_grist_ratio = 1.5  # qt water per lbs grain
+    grain_weight = 12.2 + 0.38  # lbs grain
     water_volume = grain_weight * liquor_to_grist_ratio  # qt
 
-    # Rule of thumb is 1/2 quart per lbs grain (or as high as 0.8 quarts)
     # https://www.brewersfriend.com/2010/06/12/water-volume-management-in-all-grain-brewing/
-    water_loss = 0.5 * grain_weight
+    # Rule of thumb is 1/2 qt per lbs grain (or as high as 0.8 quarts)
+    grain_absorbtion = 0.5 * grain_weight  # Lost to the grain taking on liquid
+    dead_space = 1.0  # Lost because inability to remove all liquid
+    water_loss = grain_absorbtion + dead_space
 
     # Do not exceed this number of qts after water loss
     max_water_volume = 7.0 * 4 + water_loss

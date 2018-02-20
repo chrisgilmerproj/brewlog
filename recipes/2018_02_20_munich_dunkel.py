@@ -43,6 +43,10 @@ def main():
              u'data': {
                  u'color': 420.0},
              u'grain_type': u'specialty'},
+            {u'name': u'Light Dry Extract',
+             u'weight': 0.375,
+             u'grain_type': u'dme',
+             u'notes': u'Added from yeast starter'},
         ],
         u'hops': [
             # bittering

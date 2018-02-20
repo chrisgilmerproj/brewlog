@@ -88,19 +88,11 @@ def main():
     for err in errors:
         print('- {}'.format(err))
 
-    # # Specialty Grains, Multi Step Mash
-    # grain_additions = beer.get_grain_additions_by_type(GRAIN_TYPE_SPECIALTY)
-    # bhy = calculate_brew_house_yield(6.12 / 4.0,
-    #                                  1.030,
-    #                                  grain_additions)
-    # print("\nBrew House Yield: {:0.2%} (Multi Step Mash)".format(bhy))  # noqa
-
-    # # After diluting
-    # grain_additions = beer.get_grain_additions_by_type(GRAIN_TYPE_SPECIALTY)
-    # bhy = calculate_brew_house_yield(6.12 / 4.0 + 3.5,  # Added into water
-    #                                  1.009,
-    #                                  grain_additions)
-    # print("\nBrew House Yield: {:0.2%} (Dilution)".format(bhy))  # noqa
+    # Multi Step Mash
+    bhy = calculate_brew_house_yield(7.0,
+                                     1.064,  # measure after lautering
+                                     beer.grain_additions)
+    print("\nBrew House Yield: {:0.2%} (Multi Step Mash)".format(bhy))  # noqa
 
 
 """

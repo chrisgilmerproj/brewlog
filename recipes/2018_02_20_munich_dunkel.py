@@ -140,6 +140,9 @@ Decided to use all 2 oz of the hops.  Rounded from:
 boil 1.2oz to 1.25 oz
 flavoring 0.5oz to 0.75oz
 
+After boiling the OG was 1.063 (before adding yeast starter).
+
+After adding yeast starter and bringing fermenter to 5.5 gallons the OG was 1.057
 
 """
 

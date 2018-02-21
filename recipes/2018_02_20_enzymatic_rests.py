@@ -22,7 +22,7 @@ def main():
 
     # https://www.brewersfriend.com/2010/06/12/water-volume-management-in-all-grain-brewing/
     # Rule of thumb is 1/2 qt per lbs grain (or as high as 0.8 quarts)
-    grain_absorbtion = 0.5 * grain_weight  # Lost to the grain taking on liquid
+    grain_absorbtion = 0.6 * grain_weight  # Lost to the grain taking on liquid
     dead_space = 1.0  # Lost because inability to remove all liquid
     water_loss = grain_absorbtion + dead_space
     yeast_starter_volume = 2.0  # qts of water in yeast starter
@@ -123,6 +123,9 @@ def main():
     No more room in pot so added heat to reach 158degF.  This means I've only added 29qts of water.
 
     29qts - 7.29qts to grain loss = 22.29qts.  Need 26qts so I'll add 4qts more at end.
+
+    Final water was 5.36 gallons.  29 - (5.36 * 4) = 7.56 qts lost.  This means my loss rate
+    was closer to 0.6 instead of 0.5.
     """
 
 

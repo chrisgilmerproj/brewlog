@@ -16,7 +16,7 @@ Color:   14 - 28 SRM
 Alcohol: 4.5% - 5.6% ABV
 Boil:    60 min
 Pre-Boil Volume:
-Pre-Boil Gravity: 
+Pre-Boil Gravity:
 """  # noqa
 
 import os
@@ -89,8 +89,8 @@ def main():
         print('- {}'.format(err))
 
     # Multi Step Mash
-    bhy = calculate_brew_house_yield(7.0,
-                                     1.064,  # measure after lautering
+    bhy = calculate_brew_house_yield(5.36,
+                                     1.049,  # measure after lautering
                                      beer.grain_additions)
     print("\nBrew House Yield: {:0.2%} (Multi Step Mash)".format(bhy))  # noqa
 
@@ -98,6 +98,18 @@ def main():
 """
 Notes:
 
+After lautering we have a gravity of 1.049.
+
+Measured pot to be 14.5 inches across and the wort to be 7.5 inches deep.  That gives
+1238.47 cubic inches or 5.36 gallons.
+
+Added just over 4qts and the new height was 8.75 inches, giving 1444.89 cubic
+inches or 6.25 gallons.  The new gravity is 1.041.
+
+The gravity we want is 1.056 meaning we need to add 2.13 lbs of dme:
+
+In [10]: get_wort_correction(41, 6.25, 56, 6.25, efficiency=44.0)
+Out[10]: 2.1306818181818183
 """
 
 

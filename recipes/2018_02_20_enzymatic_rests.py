@@ -38,6 +38,10 @@ def main():
     sk_temp = strike_temp(target_temp, initial_temp,
                           liquor_to_grist_ratio=liquor_to_grist_ratio)
 
+    # Recommended 18.87 qts but I've rounded up to 19.0
+    actual_water_volume = 19.0
+    water_volume = actual_water_volume
+
     print("")
     print("Bring {:0.2f} qts of water to {:0.2f} degF before adding grains".format(
         water_volume, round(sk_temp, 1)))  # noqa
@@ -51,6 +55,10 @@ def main():
     infusion_volume = mash_infusion(target_temp, initial_temp,
                                     grain_weight, water_volume,
                                     infusion_temp=infusion_temp)
+
+    # Recommended 9.86 qts but I've rounded up to 10.0
+    actual_infusion_volume = 10.0
+    infusion_volume = actual_infusion_volume
 
     manual_heat = False
     if water_volume + infusion_volume > max_water_volume:
@@ -104,6 +112,18 @@ def main():
     print("Leaving you {:0.2f} quarts in your brew or {:0.2f} gallons".format(final_water_volume,
                                                                               final_water_volume / 4.0))
     print("Your yeast starter will make up additional volume of {:0.2f} quarts".format(yeast_starter_volume))
+
+    """
+    Notes:
+
+    Started with 115degF water at 19qts. Stayed for 40 min because took too long to boil water.
+
+    Added 204.5degF water at 10qts. Stayed for 40 min.  Water reached 126degF bottom to 144degF top.
+
+    No more room in pot so added heat to reach 158degF.  This means I've only added 29qts of water.
+
+    29qts - 7.29qts to grain loss = 22.29qts.  Need 26qts so I'll add 4qts more at end.
+    """
 
 
 if __name__ == "__main__":

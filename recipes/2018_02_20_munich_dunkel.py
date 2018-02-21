@@ -21,7 +21,7 @@ Pre-Boil Gravity:
 
 import os
 
-# from brew.constants import GRAIN_TYPE_SPECIALTY
+from brew.constants import GRAIN_TYPE_CEREAL
 from brew.parsers import JSONDataLoader
 from brew.parsers import parse_recipe
 from brew.styles import StyleFactory
@@ -42,23 +42,27 @@ def main():
              u'weight': 0.38,
              u'data': {
                  u'color': 420.0},
-             u'grain_type': u'specialty'},
+             u'grain_type': u'cereal'},
             {u'name': u'Light Dry Extract',
              u'weight': 0.375,
              u'grain_type': u'dme',
              u'notes': u'Added from yeast starter'},
+            {u'name': u'Light Dry Extract',
+             u'weight': 2.7125,
+             u'grain_type': u'dme',
+             u'notes': u'Added to correct gravity'},
         ],
         u'hops': [
             # bittering
             {u'name': u'Hallertau US',
-             u'weight': 1.2,
+             u'weight': 1.25,
              u'boil_time': 60.0,
              u'hop_type': u'pellet',
              u'percent_alpha_acids': 0.038,  # from bag
              },
             # flavoring
             {u'name': u'Hallertau US',
-             u'weight': 0.5,
+             u'weight': 0.75,
              u'boil_time': 20.0,
              u'hop_type': u'pellet',
              u'percent_alpha_acids': 0.038,  # from bag
@@ -68,7 +72,7 @@ def main():
             u'name': u'Wyeast 2308',
         },
         u'data': {
-            u'brew_house_yield': 0.79,
+            u'brew_house_yield': 0.5684,
             u'units': u'imperial',
         },
     }
@@ -89,9 +93,10 @@ def main():
         print('- {}'.format(err))
 
     # Multi Step Mash
+    grain_additions = beer.get_grain_additions_by_type(GRAIN_TYPE_CEREAL)
     bhy = calculate_brew_house_yield(5.36,
                                      1.049,  # measure after lautering
-                                     beer.grain_additions)
+                                     grain_additions)
     print("\nBrew House Yield: {:0.2%} (Multi Step Mash)".format(bhy))  # noqa
 
 
@@ -110,6 +115,32 @@ The gravity we want is 1.056 meaning we need to add 2.13 lbs of dme:
 
 In [10]: get_wort_correction(41, 6.25, 56, 6.25, efficiency=44.0)
 Out[10]: 2.1306818181818183
+
+Decided to add another quart of water and thus redid this:
+
+In [3]: get_wort_correction(41, 6.25, 56, 6.5, efficiency=44.0)
+Out[3]: 2.4488636363636362
+
+Which is 2lbs 7.2oz.
+
+But turns out I want to account in advance for water I'll be adding from the yeast starter:
+
+In [5]: get_wort_correction(41, 6.25, 56, 7.0, efficiency=44.0)
+Out[5]: 3.085227272727273
+
+Which is 3lbs 1.4 oz.  But I already had 6oz in the yeast starter, so we could go with
+2lbs 11.4 oz.
+
+After adding 1 lbs of light DME this is the gravity: 1.045
+After adding 2 lbs of light DME this is the gravity: 1.051
+After adding 11.4oz of light DME this is the gravity: 1.055
+
+Decided to use all 2 oz of the hops.  Rounded from:
+
+boil 1.2oz to 1.25 oz
+flavoring 0.5oz to 0.75oz
+
+
 """
 
 

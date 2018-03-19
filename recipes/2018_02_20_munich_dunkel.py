@@ -144,6 +144,18 @@ After boiling the OG was 1.063 (before adding yeast starter).
 
 After adding yeast starter and bringing fermenter to 5.5 gallons the OG was 1.057
 
+---
+
+On March 17, 2017 I got these FG Readings
+
+1.016 - Hydrometer
+1.033 - Refractometer
+
+$ abv -o 1.057 -f 1.016
+5.38%
+$ abv -o 1.057 -f 1.033 -r
+5.28%
+
 """
 
 

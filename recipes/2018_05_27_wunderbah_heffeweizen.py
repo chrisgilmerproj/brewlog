@@ -93,7 +93,11 @@ Tub of extract:
 - Total Used: 7lbs, 3.75oz (or 3.382kg)
 
 8:00AM - Started brewing by boiling 4 gallons of water
-8:30AM - Water boiling
+8:10AM - Startead two yeast smack packs.
+8:30AM - Water boiling, added LME
+8:45AM - Measured gravity between 1.057-1.059. Added Bittering Hops.
+9:15AM - Added flavoring hops.
+9:45AM - 
 """
 
 

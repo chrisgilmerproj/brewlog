@@ -41,7 +41,7 @@ def main():
         u'final_volume': 5.0,
         u'grains': [
             {u'name': u'Wheat Liquid Extract',
-             u'weight': 7.0,
+             u'weight': 7.0 + (7.25 - 3.5) / 16,
              u'grain_type': u'lme'},
         ],
         u'hops': [
@@ -90,7 +90,11 @@ Notes:
 
 Tub of extract:
 - Before opening: 7lbs, 7.25 oz (or 3.380kg)
-- After opening: 
+- After opening:  3.5oz (or 98kg)
+- Total Used: 7lbs, 3.75oz (or 3.382kg)
+
+8:00AM - Started brewing by boiling 4 gallons of water
+8:30AM - Water boiling
 """
 
 

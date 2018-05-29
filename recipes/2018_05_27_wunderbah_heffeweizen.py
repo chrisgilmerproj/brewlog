@@ -97,7 +97,15 @@ Tub of extract:
 8:30AM - Water boiling, added LME
 8:45AM - Measured gravity between 1.057-1.059. Added Bittering Hops.
 9:15AM - Added flavoring hops.
-9:45AM - 
+9:45AM - Turn off heat.  Keep covered.  Ensure system is ready for chilling.
+9:55AM - Begin wort chiller process into carboy
+       - Measure wort between 1.061-1.062 gravity and 3.9 Gallons
+       - Gallons measured as 50mm / 55mm in the 3 gallon maker range
+       - add 2x 4.22floz of yeast starter, about 1 cup of fluid
+       - added 4 cups of water to get 1.056 gravity
+       - added 4 cups of water to get 1.051 gravity
+
+
 """
 
 

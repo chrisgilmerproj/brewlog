@@ -106,6 +106,18 @@ Tub of extract:
        - added 4 cups of water to get 1.051 gravity
 
 
+On kegging the readings were:
+- 1.031 with refractometer
+- 1.014 to 1.020 with hydrometer (had a problem with CO2 bubbles lifting it)
+
+$ abv -o 1.051 -f 1.031 -r
+4.53%
+$ abv -o 1.051 -f 1.014
+4.86%
+$ abv -o 1.051 -f 1.020
+4.07%
+
+Based on these I'll say it was 4.5% ABV
 """
 
 

@@ -103,8 +103,13 @@ Intend to use two yeast packets for this brew
 
 Did a 3gallon brew because my pot is 9gallons.  Steep grains for 30+min.
 
+At end of steeping gravity was 1.010
 
+After adding 3.3 LME and 10oz DME got 1.057
 
+Added kent golding and fuggle without a bag.
+
+After adding watter it was 1.045 OG.
 """
 
 

@@ -110,6 +110,16 @@ After adding 3.3 LME and 10oz DME got 1.057
 Added kent golding and fuggle without a bag.
 
 After adding watter it was 1.045 OG.
+
+FG:
+- Refractometer 1.027
+- Hydrometer 1.014
+
+
+$ abv -o 1.045 -f 1.014
+4.07%
+$ abv -o 1.045 -f 1.027 -r
+3.96%
 """
 
 

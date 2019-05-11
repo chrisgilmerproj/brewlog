@@ -129,6 +129,10 @@ def main():
     lbs_dme = beer.get_wort_correction(54, 4.8)
     print("\nAdd {:0.2f} lbs of DME to fix wort".format(lbs_dme))
 
+    original_gravity = 1.073  # at approximately 4G
+    original_gravity = 1.059  # at approximately 5G
+    print("\nOriginal Gravity: {:0.4} at 5G".format(original_gravity))
+
 
 if __name__ == "__main__":
     main()

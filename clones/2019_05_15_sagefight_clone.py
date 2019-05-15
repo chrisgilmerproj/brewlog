@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Deschutes Brewing Sage Fight Imperial IPA
+Deschutes Brewing Sagefight Imperial IPA
 India Pale Ale brewed with Sage and Juniper Berries
 
 Citrusy hops go head to head with resinous sage and juniper in a flavor battle royale.
@@ -65,6 +65,7 @@ from brew.yeasts import Yeast
 def main():
 
     # Constants
+    name = u"Sagefight Imperial IPA"
     brew_house_yield = 0.70
     start_volume = 4.0
     final_volume = 5.0
@@ -84,7 +85,7 @@ def main():
 
     # Define Recipe Builder
     builder = RecipeBuilder(
-        name=u"Sage Fight Imperial Pale Ale",
+        name=name,
         grain_list=grain_list,
         hop_list=hop_list,
         target_ibu=75.0,
@@ -94,23 +95,22 @@ def main():
         final_volume=final_volume,
     )
 
-    print("\nGrains:")
-    grain_additions = builder.get_grain_additions([0.80, 0.10, 0.10])
-    for grain_add in grain_additions:
-        print("-", grain_add)
+    # Get grain additions
+    grain_percentages = [0.80, 0.10, 0.10]
+    grain_additions = builder.get_grain_additions(grain_percentages)
 
-    print("\nHops:")
-    hop_additions = builder.get_hop_additions([0.25, 0.25, 0.25, 0.25], [90, 60, 30, 15])
-    for hop_add in hop_additions:
-        print("-", hop_add)
-    yeast_attenuation = builder.get_yeast_attenuation(0.08)
+    # Get hop additions
+    hop_percentages = [0.25, 0.25, 0.25, 0.25]
+    hop_boil_times = [90, 60, 30, 15]
+    hop_additions = builder.get_hop_additions(hop_percentages, hop_boil_times)
 
-    print("\nYeast:")
-    print("desired attenuation:", yeast_attenuation)
-    yeast = Yeast("English Ale", percent_attenuation=yeast_attenuation)
+    # Determine desired attenuation
+    desired_attenuation = builder.get_yeast_attenuation(0.08)
+    yeast = Yeast("English Ale", percent_attenuation=desired_attenuation)
 
+    # Create the recipe
     recipe = Recipe(
-        name=u"Sage Fight Imperial Pale Ale",
+        name=name,
         grain_additions=grain_additions,
         hop_additions=hop_additions,
         yeast=yeast,
@@ -118,7 +118,6 @@ def main():
         start_volume=start_volume,
         final_volume=final_volume,
     )
-    print("\nRecipe:")
     print(recipe.format())
 
 

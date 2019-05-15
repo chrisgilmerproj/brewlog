@@ -120,6 +120,11 @@ def main():
     )
     print(recipe.format())
 
+    print("\nAdjuncts")
+    print("===================================")
+    print("- 0.66 oz Juniper Berries (crushed), 1/3 to boil at 10 min, 2/3 at knockout")
+    print("- 0.25 oz Sage, 2/3 to boil at 10 min, 1/3 at knockout")
+
 
 if __name__ == "__main__":
     main()

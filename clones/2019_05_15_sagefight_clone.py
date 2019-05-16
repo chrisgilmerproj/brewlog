@@ -30,10 +30,10 @@ Malt
 - Munich
 
 Hops:
-- Millennium
-- Bravo
-- Amarillo
-- Centennial
+- Millennium (bitter)
+- Bravo (flavor)
+- Amarillo (aroma)
+- Centennial (dry)
 
 Additions:
 - Sage
@@ -53,6 +53,14 @@ Now it’s back for a second year and available late November for a limited time
 
 CHEERS, and as always, we love to hear what you think of this beer…feel free to comment below.
 
+Brewing Notes:
+- A 90-minute mash at 150°–152°F (65°–67°C)
+- Boil for at least 30 minutes before adding hops.
+- Follow hop schedule
+- Fully oxygenate the wort
+- Use lots of yeast (3 packs minimum)
+- After 3 weeks rack into secondary and dry hop
+- Wait 2 weeks to keg
 """ # noqa
 
 from brew.grains import Grain
@@ -77,11 +85,17 @@ def main():
     grain_list = [pale, crystal, munich]
 
     # Hops
-    millennium = Hop(name=u"millennium", percent_alpha_acids=0.14)  # Mild, herbaceous, elements of resin
-    bravo = Hop(name=u"bravo", percent_alpha_acids=0.15)  # Spicy, earthy, and lightly floral
-    amarillo = Hop(name=u"amarillo", percent_alpha_acids=0.09)  # Orange Citrus Flavor
-    centennial = Hop(name=u"centennial", percent_alpha_acids=0.10)  # Floral, with elements of citrus and notes of grapefruit  # noqa
+    # Mild, herbaceous, elements of resin
+    millennium = Hop(name=u"millennium", percent_alpha_acids=0.14)
+    # Spicy, earthy, and lightly floral
+    bravo = Hop(name=u"bravo", percent_alpha_acids=0.15)
+    # Orange Citrus Flavor
+    amarillo = Hop(name=u"amarillo", percent_alpha_acids=0.09)
+    # Floral, with elements of citrus and notes of grapefruit  # noqa
+    centennial = Hop(name=u"centennial", percent_alpha_acids=0.10)
+
     hop_list = [millennium, bravo, amarillo, centennial]
+    hop_list = hop_list[:3]
 
     # Define Recipe Builder
     builder = RecipeBuilder(
@@ -100,18 +114,22 @@ def main():
     grain_additions = builder.get_grain_additions(grain_percentages)
 
     # Get hop additions
-    hop_percentages = [0.25, 0.25, 0.25, 0.25]
-    hop_boil_times = [90, 60, 30, 15]
+    hop_percentages = [0.50, 0.30, 0.20]
+    hop_boil_times = [90, 15, 5]
     hop_additions = builder.get_hop_additions(hop_percentages, hop_boil_times)
 
     # Determine desired attenuation
     desired_attenuation = builder.get_yeast_attenuation(0.08)
     yeast = Yeast("English Ale", percent_attenuation=desired_attenuation)
 
+    # Convert first grain addition to LME
+    pale_lme = grain_additions[0].convert_to_lme(brew_house_yield=brew_house_yield)
+    new_grain_additions = [pale_lme] + grain_additions[1:]
+
     # Create the recipe
     recipe = Recipe(
         name=name,
-        grain_additions=grain_additions,
+        grain_additions=new_grain_additions,
         hop_additions=hop_additions,
         yeast=yeast,
         brew_house_yield=brew_house_yield,

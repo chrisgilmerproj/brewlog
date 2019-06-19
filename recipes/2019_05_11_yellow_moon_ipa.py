@@ -133,6 +133,10 @@ def main():
     original_gravity = 1.059  # at approximately 5G
     print("\nOriginal Gravity: {:0.4} at 5G".format(original_gravity))
 
+    final_gravity_refractometer = 1.028
+    final_gravity_hydrometer = 1.014
+    print("\nFinal Gravity: {:0.4}".format(final_gravity_hydrometer))
+
 """
 Transferred to a secondary after 3 weeks on 2019/06/03. Gravity was 1.028.  Added one package of Windsor British-style beer yeast from Danstar.  It was 11g dry.
 """

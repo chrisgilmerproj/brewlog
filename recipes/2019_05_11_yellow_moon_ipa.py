@@ -139,6 +139,8 @@ def main():
 
 """
 Transferred to a secondary after 3 weeks on 2019/06/03. Gravity was 1.028.  Added one package of Windsor British-style beer yeast from Danstar.  It was 11g dry.
+
+Two weeks later on Jun 18 2019 kegged the beer and took final gravity readings. The secondary fermentation didn't do anything.
 """
 
 

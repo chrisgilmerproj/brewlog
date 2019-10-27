@@ -83,6 +83,18 @@ def main():
                 "percent_alpha_acids": 0.047,
             }
         ],
+        u"add_in": [
+            {
+                "name": "Ground Cardamom",
+                "weight": 0.5,
+                "boil_time": 30.0,
+            },
+            {
+                "name": "Orange Zest",
+                "boil_time": 15.0,
+                "note": "6 oranges",
+            }
+        ],
         u"yeast": {u"name": u"Wyeast 1099"},
         u"data": {u"brew_house_yield": 0.425, u"units": u"imperial"},
     }
@@ -122,15 +134,22 @@ def main():
         print(grain_add.convert_to_cereal().format())
         print("")
 
-    # BIAB Measurement 1.0085, volume reduced by 0.5 Gallons
+    # BIAB Measurement at 6 qts water added, 1.037 OG
+    # Removal of bag revealed only 4qts, so lost 2 qts to grain.
+    grain_additions = beer.get_grain_additions_by_type(GRAIN_TYPE_SPECIALTY)
+    bhy = calculate_brew_house_yield(1.0, 1.037, grain_additions)
+    print("\nBrew House Yield: {:0.2%} (Specialty Grains BIAB, Enzymatic Rest)".format(bhy))
+
+    # Started with 3 gallons of hot water in pot, added 1 gallon of specialty grains
+    # BIAB Measurement 1.008, volume reduced by 0.5 Gallons
     # This is before adding extract to volume but after grains were removed
     grain_additions = beer.get_grain_additions_by_type(GRAIN_TYPE_SPECIALTY)
-    bhy = calculate_brew_house_yield(4.8, 1.005, grain_additions)
+    bhy = calculate_brew_house_yield(4.0, 1.008, grain_additions)
     print("\nBrew House Yield: {:0.2%} (Specialty Grains BIAB)".format(bhy))
 
     # After extract added
     # This is before adding extract to volume but after grains were removed
-    bhy = calculate_brew_house_yield(4.8, 1.054, beer.grain_additions)
+    bhy = calculate_brew_house_yield(4.0, 1.053, beer.grain_additions)
     print("\nBrew House Yield: {:0.2%} (After extract addition)".format(bhy))
 
     lbs_dme = beer.get_wort_correction(54, 4.8)

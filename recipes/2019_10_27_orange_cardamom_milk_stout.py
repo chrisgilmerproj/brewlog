@@ -108,6 +108,7 @@ def main():
 
     # After extract added
     # This is after adding extract and lactose to volume and after grains were removed
+    # Before adding lactose we has 1.054
     bhy = calculate_brew_house_yield(4.0, 1.063, beer.grain_additions)
     print("\nBrew House Yield: {:0.2%} (After extract addition)".format(bhy))
 

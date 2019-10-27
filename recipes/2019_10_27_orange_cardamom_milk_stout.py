@@ -117,16 +117,22 @@ def main():
 
     # At this point added 1.0 lbs of DME to bring up the gravity
 
-    original_gravity = 1.072  # at approximately 4G
-    print("\nOriginal Gravity: {:0.4} at 4G".format(original_gravity))
+    original_gravity = 1.075  # at approximately 4.75 G
+    print("\nOriginal Gravity: {:0.4} at 4.75G".format(original_gravity))
 
-    original_gravity = 1.059  # at approximately 5G
-    print("\nOriginal Gravity: {:0.4} at 5G".format(original_gravity))
+    # Added yeast starter (2qt water, 6oz dme) and 2 bags of yeast
+    original_gravity = 1.069  # at approximately 5.33G
+    print("\nOriginal Gravity: {:0.4} at 5.33G".format(original_gravity))
 
-    final_gravity_refractometer = 1.028
-    print("\nFinal Gravity (r): {:0.4}".format(final_gravity_refractometer))
-    final_gravity_hydrometer = 1.014
-    print("\nFinal Gravity (h): {:0.4}".format(final_gravity_hydrometer))
+    # 1.066 at 5.5G
+
+    original_gravity = 1.061  # at approximately 6G
+    print("\nOriginal Gravity: {:0.4} at 6G".format(original_gravity))
+
+    # final_gravity_refractometer = 1.028
+    # print("\nFinal Gravity (r): {:0.4}".format(final_gravity_refractometer))
+    # final_gravity_hydrometer = 1.014
+    # print("\nFinal Gravity (h): {:0.4}".format(final_gravity_hydrometer))
 
 
 """

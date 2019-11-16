@@ -129,10 +129,10 @@ def main():
     original_gravity = 1.061  # at approximately 6G
     print("\nOriginal Gravity: {:0.4} at 6G".format(original_gravity))
 
-    # final_gravity_refractometer = 1.028
-    # print("\nFinal Gravity (r): {:0.4}".format(final_gravity_refractometer))
-    # final_gravity_hydrometer = 1.014
-    # print("\nFinal Gravity (h): {:0.4}".format(final_gravity_hydrometer))
+    final_gravity_refractometer = 1.041
+    print("\nFinal Gravity (r): {:0.4}".format(final_gravity_refractometer))
+    final_gravity_hydrometer = 1.024
+    print("\nFinal Gravity (h): {:0.4}".format(final_gravity_hydrometer))
 
 
 """
@@ -140,6 +140,13 @@ Resources:
 - https://www.homebrewit.com/blog/2017/03/05/7-flavors-try-next-homebrew/
 
 Added 1.0lbs of DME to the wort to fix gravity
+
+abv -o 1.061 -f 1.041 -r
+4.90%
+abv -o 1.061 -f 1.041 -ra
+5.12%
+abv -o 1.061 -f 1.024
+4.86%
 """
 
 

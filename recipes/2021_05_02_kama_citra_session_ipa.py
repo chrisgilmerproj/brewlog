@@ -166,13 +166,25 @@ Resources:
 - https://dev.bjcp.org/style/2015/21/21B/specialty-ipa/
 - https://omegayeast.com/yeast/ales/west-coast-ale-ii
 
+Measured OG before adding extra water at 1.83 and volume appears to be at 2.5G + 1.8L - evaporation = 2.5G
+The 2.5G is nearly exact based on observation.
+
 For adding water make sure to measure gravity after yeast starter added:
 
-gv -o 2.5 -f 5.0 -g 1.70
-1.350
+So adding water to 5G gives us:
+
+gv -o 2.5 -f 5.0 -g 1.83
+1.415
+
+We want OG of 1.5 so here we go:
+
+gv -o 2.5 -f 4.0 -g 1.83
+1.519
+
+Which means add water only to 4G, which is less than we want but ok.
 
 
-TBD:
+TBD after secondary fermentation:
 
 abv -o 1.061 -f 1.041 -r
 4.90%

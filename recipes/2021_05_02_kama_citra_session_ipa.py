@@ -184,13 +184,12 @@ gv -o 2.5 -f 4.0 -g 1.83
 Which means add water only to 4G, which is less than we want but ok.
 
 
-TBD after secondary fermentation:
+After secondary fermentation:
 
-abv -o 1.061 -f 1.041 -r
-4.90%
-abv -o 1.061 -f 1.041 -ra
-5.12%
-
+abv -o 1.061 -f 1.028 -r
+6.46%
+abv -o 1.061 -f 1.028 -ra
+6.68%
 """
 
 
